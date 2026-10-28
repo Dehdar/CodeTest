@@ -1,0 +1,152 @@
+:root {
+    --bg: #f4f5f7;
+    --surface: #ffffff;
+    --text: #1f2933;
+    --muted: #616e7c;
+    --border: #d9dee4;
+    --accent: #2f6fde;
+    --accent-text: #ffffff;
+    --good: #1f8a4c;
+    --card-back: #2f6fde;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #14171c;
+        --surface: #1e232a;
+        --text: #e6e9ed;
+        --muted: #9aa5b1;
+        --border: #323944;
+        --accent: #5b8ef0;
+        --accent-text: #0b0e12;
+        --good: #4cc27f;
+        --card-back: #5b8ef0;
+    }
+}
+
+* { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar h1 { font-size: 1.2rem; margin: 0; }
+.room-info { display: flex; gap: 12px; align-items: center; }
+
+main { max-width: 880px; margin: 0 auto; padding: 16px; }
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+h2 { font-size: 1rem; margin: 0 0 12px; }
+
+label { display: block; font-weight: 600; margin-bottom: 12px; }
+label.checkbox { font-weight: 400; display: flex; gap: 8px; align-items: center; }
+
+input:not([type=checkbox]) {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px 10px;
+    font: inherit;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.row { display: flex; gap: 8px; align-items: stretch; }
+.row input { margin-top: 0; }
+
+button {
+    font: inherit;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--accent-text);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+button.ghost { background: transparent; color: var(--accent); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+.hint, .story-hint, .status { color: var(--muted); font-size: .9rem; margin: 8px 0 0; }
+
+.join { max-width: 420px; margin: 32px auto; }
+
+.participants {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+}
+
+.participant { text-align: center; }
+.participant .name { font-size: .9rem; margin-top: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.participant.me .name { font-weight: 700; }
+
+.slot {
+    width: 56px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.slot.voted { border: none; background: var(--card-back); }
+.slot.shown { border: 2px solid var(--accent); background: var(--surface); }
+.slot.observer { border-style: dotted; font-size: .8rem; color: var(--muted); }
+
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.summary { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+.summary .consensus { color: var(--good); font-weight: 700; }
+.summary .bars { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.summary .bar { padding: 4px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); font-size: .9rem; }
+
+.deck { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.deck button {
+    width: 56px;
+    height: 80px;
+    padding: 0;
+    font-size: 1.3rem;
+    background: var(--surface);
+    color: var(--text);
+    border: 2px solid var(--border);
+    transition: transform .1s;
+}
+
+.deck button:hover:not(:disabled) { transform: translateY(-4px); border-color: var(--accent); }
+.deck button.selected { background: var(--accent); color: var(--accent-text); border-color: var(--accent); transform: translateY(-6px); }

@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# 
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{0E4A132F-4262-4D70-89FE-4BF7A8F7AD71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandService", "CommandService\CommandService.csproj", "{730FBA91-5B9E-4B76-ACF8-B5433242DB7A}"
@@ -15,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.IntegrationTests", "Repositories.IntegrationTests\Repositories.IntegrationTests.csproj", "{BC720BCB-06D1-4720-AE97-AFE730CB6C62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTest", "AcceptanceTest\AcceptanceTest.csproj", "{A9CA2E0D-B625-4902-8B51-E2B1CE28D57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerPlanning", "PokerPlanning\PokerPlanning.csproj", "{8D912881-4695-475C-A485-C7408818DF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerPlanning.UnitTests", "PokerPlanning.UnitTests\PokerPlanning.UnitTests.csproj", "{C96A676A-C71E-4F89-9749-0A5E47C5914E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,5 +59,13 @@ Global
 		{A9CA2E0D-B625-4902-8B51-E2B1CE28D57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9CA2E0D-B625-4902-8B51-E2B1CE28D57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9CA2E0D-B625-4902-8B51-E2B1CE28D57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D912881-4695-475C-A485-C7408818DF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D912881-4695-475C-A485-C7408818DF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D912881-4695-475C-A485-C7408818DF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D912881-4695-475C-A485-C7408818DF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96A676A-C71E-4F89-9749-0A5E47C5914E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96A676A-C71E-4F89-9749-0A5E47C5914E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96A676A-C71E-4F89-9749-0A5E47C5914E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96A676A-C71E-4F89-9749-0A5E47C5914E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

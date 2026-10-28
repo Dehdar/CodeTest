@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planning Poker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+    <h1>Planning Poker</h1>
+    <div id="room-info" class="room-info" hidden>
+        <span>Room <strong id="room-name"></strong></span>
+        <button id="copy-link" class="ghost" type="button">Copy invite link</button>
+    </div>
+</header>
+
+<main>
+    <section id="join-view" class="card join">
+        <h2>Join a refinement session</h2>
+        <form id="join-form">
+            <label>Your name
+                <input id="name-input" required maxlength="30" autocomplete="nickname" placeholder="e.g. Ali">
+            </label>
+            <label>Room
+                <input id="room-input" required maxlength="40" placeholder="e.g. team-rocket">
+            </label>
+            <label class="checkbox">
+                <input id="observer-input" type="checkbox"> Join as observer (no voting)
+            </label>
+            <button type="submit">Join room</button>
+        </form>
+        <p class="hint">Share the room link with your team. Everyone with the same room name sits at the same table.</p>
+    </section>
+
+    <section id="room-view" hidden>
+        <div class="card story">
+            <form id="story-form">
+                <label for="story-input">Story being estimated</label>
+                <div class="row">
+                    <input id="story-input" maxlength="200" placeholder="Paste the ticket key and title">
+                    <button type="submit" class="ghost">Set story</button>
+                </div>
+            </form>
+            <p class="story-hint">Setting a new story starts a fresh round.</p>
+        </div>
+
+        <div class="card table">
+            <ul id="participants" class="participants"></ul>
+            <div class="actions">
+                <button id="reveal-btn" type="button">Reveal votes</button>
+                <button id="reset-btn" type="button" class="ghost">New round</button>
+            </div>
+            <div id="summary" class="summary" hidden></div>
+        </div>
+
+        <div id="deck-wrap" class="card">
+            <h2 id="deck-title">Pick your card</h2>
+            <div id="deck" class="deck"></div>
+        </div>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+</main>
+
+<script src="lib/signalr/signalr.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

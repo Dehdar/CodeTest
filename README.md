@@ -25,3 +25,18 @@ If you would like to create a self-contained executable for a specific runtime, 
     dotnet publish -r linux-x64
 
 By creating a self-contained exectuable, it is no longer required for the person who runs the executable, to have .NET SDK or Runtime installed.
+
+# Planning Poker
+
+`PokerPlanning` is a small real-time planning poker app for estimating stories during refinement. It uses ASP.NET Core SignalR and keeps rooms in memory, so there is no database to set up.
+
+* Everyone opens the same room link, enters a name and picks a card. Votes stay hidden until someone clicks **Reveal votes**.
+* After the reveal the room shows each vote, the average of the numeric cards, the spread, and whether the team reached consensus.
+* **Set story** names the ticket being estimated and starts a new round. **New round** clears the votes for another pass.
+* Join as an observer (e.g. a product owner) to follow along without voting.
+* Rooms disappear when the last person leaves.
+
+Run it with the .NET 6 SDK (or newer, with `DOTNET_ROLL_FORWARD=Major`) and share `http://<host>:1338/?room=<your-room>` with the team:
+
+    dotnet run --project PokerPlanning
+    dotnet test PokerPlanning.UnitTests
